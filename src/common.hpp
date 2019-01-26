@@ -114,7 +114,7 @@ std::string receiveString( Socket & _socket )
 		{
 			result.append( buffer.cbegin(), buffer.cend() );
 		}
-	} while ( bytesReceived == BUF_LENGTH );
+	} while ( bytesReceived == BUF_LENGTH || buffer[ bytesReceived - 1 ] != '\0' );
 
 	return result;
 }
